@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-size: 100px;
+    --gap-size: 0.5rem;
+    --primary-color: #1a73e8;
+}
+
+h1 {
+    color: #1a73e8;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+#player-form {
+    text-align: center;
+}
+
+.player-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 200px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #1a73e8;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    min-width: 120px;
+}
+
+button:hover {
+    background-color: #1557b0;
+}
+
+#message {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    min-height: 2rem;
+    padding: 0 1rem;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+#gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, var(--cell-size));
+    gap: var(--gap-size);
+    background-color: var(--primary-color);
+    padding: var(--gap-size);
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    :root {
+        --cell-size: 90px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #message {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --cell-size: 75px;
+        --gap-size: 0.3rem;
+    }
+
+    body {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .player-inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 250px;
+        padding: 0.7rem;
+    }
+
+    #message {
+        font-size: 1rem;
+        min-height: 1.5rem;
+    }
+
+    .cell {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    :root {
+        --cell-size: 60px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    body {
+        padding: 0.5rem;
+    }
+}
